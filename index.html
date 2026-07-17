@@ -1,0 +1,770 @@
+<!DOCTYPE HTML>
+<!--
+    Dimension by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Entrepreneur Chris Frank Kyalo</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        
+        <!-- FAVICON - Smaller CFK Logo -->
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-size='55' font-family='serif' font-weight='bold' fill='%23d4af37'>CFK</text></svg>" />
+        
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        
+        <!-- FORCE TIMES NEW ROMAN FONT & CUSTOM STYLES -->
+        <style>
+            /* Global font change to Times New Roman */
+            body, p, h1, h2, h3, h4, h5, h6, a, li, span, div, 
+            input, textarea, button, label, blockquote, pre, code,
+            .inner, .content, .major, .copyright, nav ul li a {
+                font-family: 'Times New Roman', Times, serif !important;
+            }
+            
+            /* Keep icons with their own font (they use Font Awesome) */
+            .icon, .fas, .far, .fab, .fa, .icon::before, 
+            .icon i, i, .icon brands, .icon solid, .icon brands::before {
+                font-family: "Font Awesome 6 Free" !important;
+            }
+            
+            .icon brands {
+                font-family: "Font Awesome 6 Brands" !important;
+            }
+
+            /* Password Modal Styles */
+            .password-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                z-index: 9999;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .password-overlay.active {
+                display: flex;
+            }
+
+            .password-modal {
+                background: #1e2a3a;
+                padding: 2.5rem 3rem;
+                border-radius: 1.5rem;
+                max-width: 450px;
+                width: 90%;
+                text-align: center;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+                animation: modalFadeIn 0.3s ease;
+            }
+
+            @keyframes modalFadeIn {
+                from {
+                    opacity: 0;
+                    transform: scale(0.9);
+                }
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            .password-modal h3 {
+                color: #ffffff;
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+                font-family: 'Times New Roman', Times, serif !important;
+            }
+
+            .password-modal p {
+                color: #a0b4c8;
+                margin-bottom: 1.5rem;
+                font-size: 0.95rem;
+                font-family: 'Times New Roman', Times, serif !important;
+            }
+
+            .password-modal input[type="password"] {
+                width: 100%;
+                padding: 0.75rem 1rem;
+                border: 1px solid #3a4a5e;
+                border-radius: 0.5rem;
+                background: #0f1a2a;
+                color: #ffffff;
+                font-size: 1rem;
+                margin-bottom: 1rem;
+                font-family: 'Times New Roman', Times, serif !important;
+                outline: none;
+                transition: border-color 0.3s;
+            }
+
+            .password-modal input[type="password"]:focus {
+                border-color: #c9a84c;
+            }
+
+            .password-modal .button-group {
+                display: flex;
+                gap: 0.8rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .password-modal .btn-download {
+                background: #d4af37;
+                color: #000000 !important;
+                border: none;
+                padding: 0.7rem 2rem;
+                border-radius: 0.5rem;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background 0.3s, transform 0.2s;
+                font-family: 'Times New Roman', Times, serif !important;
+                font-weight: bold;
+            }
+
+            .password-modal .btn-download:hover {
+                background: #e8c94a;
+                transform: translateY(-2px);
+            }
+
+            .password-modal .btn-cancel {
+                background: transparent;
+                color: #a0b4c8;
+                border: 1px solid #3a4a5e;
+                padding: 0.7rem 1.5rem;
+                border-radius: 0.5rem;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: all 0.3s;
+                font-family: 'Times New Roman', Times, serif !important;
+            }
+
+            .password-modal .btn-cancel:hover {
+                background: #2a3a4e;
+                color: #ffffff;
+            }
+
+            .password-modal .error-msg {
+                color: #e74c3c;
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+                display: none;
+                font-family: 'Times New Roman', Times, serif !important;
+            }
+
+            .password-modal .error-msg.show {
+                display: block;
+            }
+
+            /* GOLD CV DOWNLOAD BUTTON ON EDUCATION PAGE */
+            .cv-download-btn {
+                display: inline-block;
+                background: #d4af37 !important;
+                color: #000000 !important;
+                padding: 0.8rem 2.5rem;
+                border-radius: 0.5rem;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 1rem;
+                margin-top: 1rem;
+                transition: background 0.3s, transform 0.2s;
+                border: none;
+                cursor: pointer;
+                font-family: 'Times New Roman', Times, serif !important;
+                box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+            }
+
+            .cv-download-btn:hover {
+                background: #e8c94a !important;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
+            }
+
+            .cv-download-btn i {
+                margin-right: 0.5rem;
+                color: #000000 !important;
+            }
+
+            .cv-section {
+                margin-top: 2rem;
+                padding-top: 1.5rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                text-align: center;
+            }
+
+            .cv-section p {
+                color: #a0b4c8;
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+                font-family: 'Times New Roman', Times, serif !important;
+            }
+
+            /* Contact Details Styles */
+            .contact-details {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+                margin: 1.5rem 0;
+                background: rgba(255, 255, 255, 0.03);
+                padding: 1.5rem;
+                border-radius: 1rem;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .contact-detail-item {
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+                padding: 0.6rem 0.8rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 0.5rem;
+                transition: background 0.3s;
+            }
+
+            .contact-detail-item:hover {
+                background: rgba(212, 175, 55, 0.15);
+            }
+
+            .contact-detail-item .icon-box {
+                width: 2.5rem;
+                height: 2.5rem;
+                background: rgba(212, 175, 55, 0.15);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #d4af37;
+                font-size: 1.1rem;
+                flex-shrink: 0;
+            }
+
+            .contact-detail-item .info {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .contact-detail-item .info .label {
+                font-size: 0.7rem;
+                color: #8a9fb0;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                font-family: 'Times New Roman', Times, serif !important;
+            }
+
+            .contact-detail-item .info .value {
+                color: #ffffff;
+                font-size: 0.95rem;
+                font-weight: 500;
+                font-family: 'Times New Roman', Times, serif !important;
+            }
+
+            .contact-detail-item .info .value a {
+                color: #d4af37;
+                text-decoration: none;
+                transition: color 0.3s;
+                font-family: 'Times New Roman', Times, serif !important;
+            }
+
+            .contact-detail-item .info .value a:hover {
+                color: #e8c94a;
+                text-decoration: underline;
+            }
+
+            /* Form success/error messages */
+            .form-success {
+                display: none;
+                background: rgba(46, 204, 113, 0.15);
+                border: 1px solid #2ecc71;
+                color: #2ecc71;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                margin-top: 1rem;
+                text-align: center;
+                font-family: 'Times New Roman', Times, serif !important;
+                animation: fadeIn 0.5s ease;
+            }
+
+            .form-success.show {
+                display: block;
+            }
+
+            .form-error {
+                display: none;
+                background: rgba(231, 76, 60, 0.15);
+                border: 1px solid #e74c3c;
+                color: #e74c3c;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                margin-top: 1rem;
+                text-align: center;
+                font-family: 'Times New Roman', Times, serif !important;
+                animation: fadeIn 0.5s ease;
+            }
+
+            .form-error.show {
+                display: block;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Redirect countdown style */
+            .redirect-timer {
+                display: none;
+                margin-top: 0.5rem;
+                font-size: 0.85rem;
+                color: #a0b4c8;
+                font-family: 'Times New Roman', Times, serif !important;
+            }
+
+            .redirect-timer.show {
+                display: block;
+            }
+
+            @media (max-width: 600px) {
+                .contact-details {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <div class="logo">
+                            <span class="icon fa-gem"></span>
+                        </div>
+                        <div class="content">
+                            <div class="inner">
+                                <h1> Entrepreneur Chris Frank Kyalo</h1>
+                                <p>Economics & Statistics Student · Major: Statistics<br />
+                                KCA University, Nairobi · Available Immediately</p>
+                            </div>
+                        </div>
+                        <nav>
+                            <ul>
+                                <li><a href="#intro">Profile</a></li>
+                                <li><a href="#work">Experience</a></li>
+                                <li><a href="#education">Education</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </header>
+
+                <!-- Main -->
+                    <div id="main">
+
+                        <!-- Profile / Intro -->
+                            <article id="intro">
+                                <h2 class="major">Professional Profile</h2>
+                                <span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+                                <p>Motivated and analytically driven fourth-year Economics and Statistics student at KCA University, Nairobi (<strong>Major: Statistics</strong>). Experienced as an Attaché in Accounting and Finance at <strong>Agrichem Africa Limited</strong>, with hands-on experience in financial systems, data analysis, reconciliation, and professional reporting.</p>
+                                <p>Proficient in <strong>HTML5, CSS3, SAP Business One, QuickBooks Desktop Pro, and Advanced Excel</strong>. Actively seeking attachment opportunities in banking, finance, public policy, and economic research.</p>
+                                
+                                <h3 style="margin-top: 1.5rem;">Core Skills</h3>
+                                <ul>
+                                    <li><strong>Financial Systems:</strong> SAP Business One, QuickBooks Desktop Pro</li>
+                                    <li><strong>Data Analysis:</strong> Advanced Excel, statistical analysis, economic modelling</li>
+                                    <li><strong>Reconciliation:</strong> Account reconciliation, audit readiness, bookkeeping</li>
+                                    <li><strong>Programming:</strong> HTML5, CSS3, responsive layouts</li>
+                                    <li><strong>Technical:</strong> KRA iTax returns filing, MS Office Suite</li>
+                                    <li><strong>Interpersonal:</strong> Leadership, teamwork, professional communication</li>
+                                </ul>
+
+                                <h3 style="margin-top: 1.5rem;">Certificates</h3>
+                                <ul>
+                                    <li>Tax Essentials – KCA University</li>
+                                    <li>Web Design (HTML & CSS) – freeCodeCamp</li>
+                                    <li>Computer Studies – Nanyuki School</li>
+                                    <li>Music & Drama Certificate Programme</li>
+                                </ul>
+                            </article>
+
+                        <!-- Work / Experience -->
+                            <article id="work">
+                                <h2 class="major">Work Experience</h2>
+                                <span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+                                
+                                <h3>Attaché – Accounting and Finance</h3>
+                                <p><strong>Agrichem Africa Limited</strong> · Industrial Attachment</p>
+                                
+                                <ul>
+                                    <li><strong>Financial System Proficiency:</strong> Used SAP Business One and QuickBooks Desktop Pro for financial data entry, processing, and reporting.</li>
+                                    <li><strong>Data Analysis and Advanced Excel:</strong> Performed data analysis and financial modelling using Advanced Excel.</li>
+                                    <li><strong>Financial Reconciliation and Audit Readiness:</strong> Assisted in account reconciliations and preparation of audit-ready documents.</li>
+                                    <li><strong>Attention to Detail:</strong> Reviewed and verified financial documents ensuring accuracy and compliance.</li>
+                                    <li><strong>Professional Communication and Reporting:</strong> Prepared financial reports and communicated findings to the finance team.</li>
+                                </ul>
+
+                                <h3 style="margin-top: 1.5rem;">Career Interests</h3>
+                                <ul>
+                                    <li>Banking and Finance</li>
+                                    <li>Government Sector</li>
+                                    <li>Business Strategy</li>
+                                    <li>Economic Analysis</li>
+                                    <li>Credit Risk</li>
+                                    <li>Insurance</li>
+                                    <li>Accounting</li>
+                                    <li>Tax Administration</li>
+                                </ul>
+                            </article>
+
+                        <!-- Education -->
+                            <article id="education">
+                                <h2 class="major">Education</h2>
+                                <span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+                                
+                                <h3>Bachelor of Economics and Statistics</h3>
+                                <p><strong>KCA University</strong> – Nairobi, Kenya<br />
+                                <em>Major: Statistics · Fourth Year Student | Ongoing</em></p>
+
+                                <h3 style="margin-top: 1.5rem;">Kenya Certificate of Secondary Education (KCSE)</h3>
+                                <p><strong>Nanyuki High School</strong> – Nanyuki, Kenya<br />
+                                <em>Completed Secondary Education</em></p>
+
+                                <h3 style="margin-top: 1.5rem;">Kenya Certificate of Primary Education (KCPE)</h3>
+                                <p><strong>High Peak Junior Academy</strong><br />
+                                <em>Completed Primary Education</em></p>
+
+                                <h3 style="margin-top: 1.5rem;">Key Competencies</h3>
+                                <ul>
+                                    <li><strong>Financial Systems:</strong> SAP Business One, QuickBooks Desktop Pro, data entry and processing</li>
+                                    <li><strong>Data Analysis:</strong> Advanced Excel, statistical analysis, economic modelling and interpretation</li>
+                                    <li><strong>Reconciliation:</strong> Account reconciliation, audit readiness, bookkeeping and document verification</li>
+                                    <li><strong>Programming:</strong> HTML5 and CSS3 – web page structure, responsive layouts and styling</li>
+                                    <li><strong>Technical:</strong> Computer literacy, KRA iTax returns filing, MS Office Suite</li>
+                                    <li><strong>Interpersonal:</strong> Leadership, teamwork, professional communication and reporting</li>
+                                </ul>
+
+                                <h3 style="margin-top: 1.5rem;">Languages</h3>
+                                <ul>
+                                    <li><strong>English:</strong> Fluent – reading, writing and speaking</li>
+                                    <li><strong>Swahili:</strong> Native – fluent in reading, writing and speaking</li>
+                                </ul>
+                                
+                                <h3 style="margin-top: 1.5rem;">References</h3>
+                                <p><em>Available upon request</em></p>
+
+                                <!-- GOLD CV DOWNLOAD SECTION WITH PASSWORD PROTECTION -->
+                                <div class="cv-section">
+                                    <p><i class="fas fa-file-pdf" style="color: #d4af37; font-size: 1.2rem;"></i> Download my complete CV</p>
+                                    <button class="cv-download-btn" onclick="openPasswordModal()">
+                                        <i class="fas fa-download"></i> Download CV (Password Protected)
+                                    </button>
+                                </div>
+                            </article>
+
+                        <!-- Contact -->
+                            <article id="contact">
+                                <h2 class="major">Contact</h2>
+
+                                <!-- CONTACT DETAILS -->
+                                <div class="contact-details">
+                                    <div class="contact-detail-item">
+                                        <div class="icon-box">
+                                            <i class="fas fa-phone"></i>
+                                        </div>
+                                        <div class="info">
+                                            <span class="label">Phone Call</span>
+                                            <span class="value"><a href="tel:+254758795562">0758 795 562</a></span>
+                                        </div>
+                                    </div>
+                                    <div class="contact-detail-item">
+                                        <div class="icon-box">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </div>
+                                        <div class="info">
+                                            <span class="label">WhatsApp</span>
+                                            <span class="value"><a href="https://wa.me/254772870940" target="_blank">+254 772 870 940</a></span>
+                                        </div>
+                                    </div>
+                                    <div class="contact-detail-item" style="grid-column: 1 / -1;">
+                                        <div class="icon-box">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div class="info">
+                                            <span class="label">Email</span>
+                                            <span class="value"><a href="mailto:chrisfrank.ent@gmail.com">chrisfrank.ent@gmail.com</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CONTACT FORM - FORMSPREE AJAX INTEGRATION -->
+                                <form id="contactForm">
+                                    <div class="fields">
+                                        <div class="field half">
+                                            <label for="name">Name</label>
+                                            <input type="text" name="name" id="name" required />
+                                        </div>
+                                        <div class="field half">
+                                            <label for="email">Email</label>
+                                            <input type="email" name="email" id="email" required />
+                                        </div>
+                                        <div class="field">
+                                            <label for="message">Message</label>
+                                            <textarea name="message" id="message" rows="4" required></textarea>
+                                        </div>
+                                    </div>
+                                    <ul class="actions">
+                                        <li><input type="submit" value="Send Message" class="primary" id="sendBtn" /></li>
+                                        <li><input type="reset" value="Reset" /></li>
+                                    </ul>
+                                </form>
+
+                                <!-- Success & Error Messages -->
+                                <div class="form-success" id="formSuccess">
+                                    <i class="fas fa-check-circle" style="font-size: 1.5rem; display: block; margin-bottom: 0.5rem;"></i>
+                                    ✅ Message sent successfully!
+                                    <div class="redirect-timer" id="redirectTimer">Redirecting to home page in <span id="countdown">5</span> seconds...</div>
+                                </div>
+
+                                <div class="form-error" id="formError">
+                                    <i class="fas fa-exclamation-circle" style="font-size: 1.5rem; display: block; margin-bottom: 0.5rem;"></i>
+                                    ❌ Failed to send message. Please try again or contact me directly via email.
+                                </div>
+
+                                <ul class="icons" style="margin-top: 1.5rem;">
+                                    <li><a href="https://wa.me/254772870940" target="_blank" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+                                    <li><a href="mailto:chrisfrank.ent@gmail.com" class="icon brands fa-envelope"><span class="label">Email</span></a></li>
+                                    <li><a href="tel:+254758795562" class="icon brands fa-phone"><span class="label">Phone</span></a></li>
+                                    <li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                                </ul>
+                            </article>
+
+                    </div>
+
+                <!-- Footer -->
+                    <footer id="footer">
+                        <p class="copyright">&copy; Chris Frank Kyalo</p>
+                    </footer>
+
+            </div>
+
+        <!-- BG -->
+            <div id="bg"></div>
+
+        <!-- PASSWORD MODAL (Overlay) -->
+            <div class="password-overlay" id="passwordOverlay">
+                <div class="password-modal">
+                    <h3><i class="fas fa-lock" style="color: #d4af37; margin-right: 0.5rem;"></i>Enter Password</h3>
+                    <p>Please enter the password to download the CV</p>
+                    
+                    <input type="password" id="passwordInput" placeholder="Enter password..." autofocus />
+                    
+                    <div class="error-msg" id="errorMsg">
+                        <i class="fas fa-exclamation-circle"></i> Incorrect password. Please try again.
+                    </div>
+                    
+                    <div class="button-group">
+                        <button class="btn-download" onclick="verifyPassword()">
+                            <i class="fas fa-unlock"></i> Unlock & Download
+                        </button>
+                        <button class="btn-cancel" onclick="closePasswordModal()">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+
+        <!-- Password Protection & AJAX Form Handling Script -->
+        <script>
+            // ========== PASSWORD PROTECTION ==========
+            const CORRECT_PASSWORD = "1A2B3C4D@#$";  // ← Change this to your password
+            const CV_FILE_PATH = "images/Chris_Frank_Kyalo_CV.pdf";  // ← Update with your actual filename
+
+            function openPasswordModal() {
+                document.getElementById('passwordOverlay').classList.add('active');
+                document.getElementById('passwordInput').value = '';
+                document.getElementById('errorMsg').classList.remove('show');
+                setTimeout(() => {
+                    document.getElementById('passwordInput').focus();
+                }, 100);
+            }
+
+            function closePasswordModal() {
+                document.getElementById('passwordOverlay').classList.remove('active');
+                document.getElementById('errorMsg').classList.remove('show');
+            }
+
+            function verifyPassword() {
+                const enteredPassword = document.getElementById('passwordInput').value;
+                const errorMsg = document.getElementById('errorMsg');
+                
+                if (enteredPassword === CORRECT_PASSWORD) {
+                    errorMsg.classList.remove('show');
+                    downloadCV();
+                    closePasswordModal();
+                } else {
+                    errorMsg.classList.add('show');
+                    document.getElementById('passwordInput').value = '';
+                    document.getElementById('passwordInput').focus();
+                }
+            }
+
+            function downloadCV() {
+                const link = document.createElement('a');
+                link.href = CV_FILE_PATH;
+                link.download = 'Chris_Frank_Kyalo_CV.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+
+            document.getElementById('passwordInput').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    verifyPassword();
+                }
+            });
+
+            document.getElementById('passwordOverlay').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closePasswordModal();
+                }
+            });
+
+            // ========== AJAX FORM SUBMISSION WITH REDIRECT ==========
+            let redirectTimer = null;
+            let countdownInterval = null;
+
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent page reload
+
+                const form = this;
+                const sendBtn = document.getElementById('sendBtn');
+                const successMsg = document.getElementById('formSuccess');
+                const errorMsg = document.getElementById('formError');
+                const redirectTimerEl = document.getElementById('redirectTimer');
+                const countdownEl = document.getElementById('countdown');
+
+                // Hide any previous messages
+                successMsg.classList.remove('show');
+                errorMsg.classList.remove('show');
+                redirectTimerEl.classList.remove('show');
+
+                // Clear any existing timers
+                if (redirectTimer) {
+                    clearTimeout(redirectTimer);
+                    redirectTimer = null;
+                }
+                if (countdownInterval) {
+                    clearInterval(countdownInterval);
+                    countdownInterval = null;
+                }
+
+                // Get form data
+                const formData = new FormData(form);
+
+                // Show loading state
+                sendBtn.value = 'Sending...';
+                sendBtn.disabled = true;
+
+                // Send data to Formspree using fetch (AJAX)
+                fetch('https://formspree.io/f/mreneden', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Success - show success message
+                        successMsg.classList.add('show');
+                        form.reset(); // Clear the form
+                        
+                        // Show redirect timer
+                        redirectTimerEl.classList.add('show');
+                        let seconds = 5;
+                        countdownEl.textContent = seconds;
+
+                        // Start countdown
+                        countdownInterval = setInterval(() => {
+                            seconds--;
+                            countdownEl.textContent = seconds;
+                            if (seconds <= 0) {
+                                clearInterval(countdownInterval);
+                                countdownInterval = null;
+                                // Redirect to home page (Profile/Intro)
+                                window.location.hash = '#intro';
+                                // Hide success message after redirect
+                                setTimeout(() => {
+                                    successMsg.classList.remove('show');
+                                    redirectTimerEl.classList.remove('show');
+                                }, 300);
+                            }
+                        }, 1000);
+
+                        // Backup redirect in case countdown fails
+                        redirectTimer = setTimeout(() => {
+                            window.location.hash = '#intro';
+                            setTimeout(() => {
+                                successMsg.classList.remove('show');
+                                redirectTimerEl.classList.remove('show');
+                            }, 300);
+                        }, 6000);
+
+                    } else {
+                        // Server error - show error message
+                        errorMsg.classList.add('show');
+                        setTimeout(() => {
+                            errorMsg.classList.remove('show');
+                        }, 5000);
+                    }
+                })
+                .catch(error => {
+                    // Network error - show error message
+                    errorMsg.classList.add('show');
+                    setTimeout(() => {
+                        errorMsg.classList.remove('show');
+                    }, 5000);
+                    console.error('Form submission error:', error);
+                })
+                .finally(() => {
+                    // Reset button state
+                    sendBtn.value = 'Send Message';
+                    sendBtn.disabled = false;
+                });
+            });
+
+            // Clean up timers if user navigates away manually
+            window.addEventListener('hashchange', function() {
+                if (redirectTimer) {
+                    clearTimeout(redirectTimer);
+                    redirectTimer = null;
+                }
+                if (countdownInterval) {
+                    clearInterval(countdownInterval);
+                    countdownInterval = null;
+                }
+                document.getElementById('formSuccess').classList.remove('show');
+                document.getElementById('redirectTimer').classList.remove('show');
+            });
+        </script>
+
+    </body>
+</html>
